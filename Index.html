@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="safe-area-wrapper">
+        <div class="container">
+            <div class="checker-box">
+                <h1>🔐 Password Strength Checker</h1>
+                
+                <div class="input-group">
+                    <label for="password">Enter Password:</label>
+                    <div class="password-input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Enter your password here"
+                            autocomplete="off"
+                            inputmode="text"
+                        >
+                        <button class="toggle-btn" id="toggleBtn" type="button">👁️</button>
+                    </div>
+                </div>
+
+                <div class="strength-meter">
+                    <div class="strength-bar" id="strengthBar"></div>
+                </div>
+
+                <p class="strength-text" id="strengthText">Enter a password to check strength</p>
+
+                <div class="requirements">
+                    <h3>Password Requirements:</h3>
+                    <ul>
+                        <li id="req-length" class="requirement">
+                            <span class="icon">○</span> At least 8 characters
+                        </li>
+                        <li id="req-uppercase" class="requirement">
+                            <span class="icon">○</span> Uppercase (A-Z)
+                        </li>
+                        <li id="req-lowercase" class="requirement">
+                            <span class="icon">○</span> Lowercase (a-z)
+                        </li>
+                        <li id="req-number" class="requirement">
+                            <span class="icon">○</span> Number (0-9)
+                        </li>
+                        <li id="req-special" class="requirement">
+                            <span class="icon">○</span> Special (!@#$%^&*)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <p><strong>Length:</strong> <span id="length">0</span> chars</p>
+                    <p><strong>Types:</strong> <span id="charTypes">0</span>/5</p>
+                    <p id="commonPassword" class="warning" style="display:none;">⚠️ Common password</p>
+                </div>
+
+                <div class="suggestions" id="suggestions"></div>
+
+                <div class="button-group">
+                    <button class="copy-btn" id="copyBtn" style="display:none;" type="button">📋 Copy</button>
+                    <button class="generate-btn" id="generateBtn" type="button">🎲 Generate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
